@@ -1,0 +1,46 @@
+.style1 {
+  background: #888;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.style1:before {
+  content: "";
+  position: absolute;
+  width: 94%;
+  height: 94%;
+  top: 3%;
+  left: 3%;
+  background: black;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.style1:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  background: aqua;
+  transform-origin: top left;
+  animation: spinner1 1s infinite linear;
+}
+
+@keyframes spinner1 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

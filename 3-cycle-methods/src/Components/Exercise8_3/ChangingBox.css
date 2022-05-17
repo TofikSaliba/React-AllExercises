@@ -1,0 +1,60 @@
+.ChangingBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  transition: all 0.5s ease;
+}
+
+.square {
+  border-radius: 0;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.blue {
+  background: blue;
+}
+
+.red {
+  background: red;
+}
+
+.pink {
+  background: pink;
+}
+
+.green {
+  background: green;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.orange {
+  background: orange;
+}
+
+.brown {
+  background: brown;
+}
+
+.black {
+  background: black;
+}
+
+.purple {
+  background: purple;
+}
+
+.aqua {
+  background: aqua;
+}

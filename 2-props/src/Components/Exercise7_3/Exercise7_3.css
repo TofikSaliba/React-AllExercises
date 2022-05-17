@@ -1,0 +1,15 @@
+.negative {
+  color: red;
+}
+
+.positive {
+  color: green;
+}
+
+.zero {
+  color: black;
+}
+
+span {
+  font-size: 30px;
+}

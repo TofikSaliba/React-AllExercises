@@ -1,0 +1,18 @@
+.blue {
+  background: blue;
+}
+.red {
+  background: red;
+}
+.yellow {
+  background: yellow;
+}
+
+button {
+  display: block;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 1rem;
+}

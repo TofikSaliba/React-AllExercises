@@ -2,7 +2,7 @@ import React from "react";
 import "./form.css";
 
 class Select extends React.Component {
-  state = { val: "select age" };
+  state = { val: this.props.value };
 
   onInputChange(newVal) {
     this.setState({ val: newVal });

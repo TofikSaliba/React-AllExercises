@@ -2,7 +2,7 @@ import React from "react";
 import "./form.css";
 
 class TextArea extends React.Component {
-  state = { val: "" };
+  state = { val: this.props.value };
 
   onInputChange(newVal) {
     this.setState({ val: newVal });

@@ -1,9 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  background: rgb(219, 217, 217);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  align-self: center;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  align-self: center;
+}
+
+.finallyConfirmed {
+  max-width: 700px;
+  padding: 3rem;
+  background: rgb(238, 222, 192);
+  border-radius: 10px;
+  box-shadow: 0px 15px 20px rgb(53, 53, 53);
+  text-align: center;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+}
+
+.confirmContainerFather {
+  min-width: 500px;
+}
+
+#myForm,
+.confirmContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgb(238, 222, 192);
+  border-radius: 10px;
+  box-shadow: 0px 15px 20px rgb(53, 53, 53);
+}
+
+.inputTextDiv {
+  width: 100%;
+}
+
+input[type="text"] {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: 1px solid #111;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
 input[type="checkbox"],
 button {
   cursor: pointer;
 }
 
+textarea {
+  font-size: 2rem;
+}
+
+button {
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  font-size: 2rem;
+  background: rgb(210, 105, 30);
+  color: #fff;
+}
+
+#cancel {
+  background: maroon;
+}
+
+#cancel:hover {
+  background: rgb(172, 2, 2);
+}
+
+#confirm {
+  background: green;
+}
+
+#confirm:hover {
+  background: rgb(7, 168, 7);
+}
+
+button:hover {
+  background: rgb(199, 88, 9);
+}
+
 .checkContainer label {
   cursor: pointer;
   user-select: none;
+}
+
+span {
+  font-weight: bold;
+}
+
+#terms {
+  margin-left: 1rem;
+  font-size: 2rem;
 }

@@ -26,7 +26,9 @@ class Checkbox extends React.Component {
           required={this.state.required}
           checked={this.state.checked}
         />
-        <label htmlFor={this.props.id}>{this.props.text}</label>
+        <label id="terms" htmlFor={this.props.id}>
+          {this.props.text}
+        </label>
       </div>
     );
   }

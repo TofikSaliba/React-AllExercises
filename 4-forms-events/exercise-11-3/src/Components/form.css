@@ -1,0 +1,9 @@
+input[type="checkbox"],
+button {
+  cursor: pointer;
+}
+
+.checkContainer label {
+  cursor: pointer;
+  user-select: none;
+}

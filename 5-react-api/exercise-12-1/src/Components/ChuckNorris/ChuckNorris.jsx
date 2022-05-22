@@ -47,24 +47,28 @@ class ChuckNorris extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="randomJoke">
-          <h2>
+      <div className="mainContainer">
+        <div className="randomJokeContainer">
+          <h1>
             Click the "Get Joke" button to show a random joke or choose a
             category for a random joke from that category
-          </h2>
-          <CustomBtn
-            text="Get Joke"
-            callBackFunc={this.getRandomJoke}
-            disabled={false}
-          />
-          <Select
-            categories={this.state.categories}
-            getSelectedCategory={this.getSelectedCategory}
-          />
-          <p>{this.state.currentJoke}</p>
+          </h1>
+          <div className="btn-select">
+            <CustomBtn
+              text="Get Joke"
+              callBackFunc={this.getRandomJoke}
+              disabled={false}
+            />
+            <Select
+              categories={this.state.categories}
+              getSelectedCategory={this.getSelectedCategory}
+            />
+          </div>
+          <p className="randomJoke">{this.state.currentJoke}</p>
         </div>
+        <hr />
         <div className="jokeSearchContainer">
+          <h1>You can also search for multiply jokes</h1>
           <ReadInput getSearchQuery={this.getSearchQuery} />
           <div className="searchResult">{this.state.searchJokes}</div>
         </div>

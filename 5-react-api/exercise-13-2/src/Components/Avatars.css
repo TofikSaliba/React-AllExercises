@@ -8,6 +8,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background: #ccc;
+}
+
 h1 {
   text-align: center;
   padding: 0 2rem;
@@ -88,8 +92,8 @@ input {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #aaa;
-  border-color: #aaa transparent #aaa transparent;
+  border: 6px solid rgb(92, 154, 156);
+  border-color: rgb(95, 166, 168) transparent rgb(112, 211, 214) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

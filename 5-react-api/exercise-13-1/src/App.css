@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 5rem;
+}
+
+.names,
+.bornBefore {
+  flex-basis: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

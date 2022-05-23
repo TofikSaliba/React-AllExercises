@@ -14,6 +14,7 @@ class InputFocus extends React.Component {
   render() {
     return (
       <div>
+        <h1>Focus from start</h1>
         <input ref={this.ref} type="text" name="focus" id="focus" />
       </div>
     );

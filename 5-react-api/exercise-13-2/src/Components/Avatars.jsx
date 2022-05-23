@@ -13,18 +13,16 @@ class Avatars extends React.Component {
     this.getAvatars(random);
   };
 
-  getAvatars = (random) => {
-    const promises = [];
-    for (let i = 0; i < random; i++) {
-      const avatar = axios.get("https://randomuser.me/api/");
-      promises.push(avatar);
-    }
-    Promise.all(promises).then((vals) => this.getAvatarObjs(vals));
+  getAvatars = async (random) => {
+    const avatars = await axios.get(
+      `https://randomuser.me/api/?results=${random}`
+    );
+    console.log(avatars);
+    this.getAvatarObjs(avatars.data.results);
   };
 
   getAvatarObjs = (objs) => {
-    const cardArrOfObjs = objs.map((obj) => {
-      const objData = obj.data.results[0];
+    const cardArrOfObjs = objs.map((objData) => {
       return {
         firstName: objData.name.first,
         lastName: objData.name.last,

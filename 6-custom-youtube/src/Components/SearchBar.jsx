@@ -1,6 +1,6 @@
 import React from "react";
 
-class SearchInput extends React.Component {
+class SearchBar extends React.Component {
   state = { term: "" };
 
   onInputChange = ({ target }) => {
@@ -9,10 +9,11 @@ class SearchInput extends React.Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
+    this.props.onTermSubmit(this.state.term);
+    this.setState({ term: "" });
   };
 
   render() {
-    console.log(this.state.term);
     return (
       <div className="search-bar ui segment">
         <form onSubmit={this.onFormSubmit} className="ui form">
@@ -31,4 +32,4 @@ class SearchInput extends React.Component {
   }
 }
 
-export default SearchInput;
+export default SearchBar;

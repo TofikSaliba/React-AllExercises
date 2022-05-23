@@ -1,0 +1,6 @@
+.relaxed .video-item.item {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+  height: 100px;
+}

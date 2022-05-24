@@ -25,6 +25,13 @@ html {
   margin: 1rem auto;
 }
 
+.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
 .homePage {
   display: flex;
   flex-direction: column;

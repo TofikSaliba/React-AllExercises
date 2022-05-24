@@ -3,10 +3,13 @@ import { NavLink } from "react-router-dom";
 import ProductData from "../store";
 
 class ProductDetail extends React.Component {
+  state = { wrongId: false };
+
   getDetails = () => {
     let productObj = this.props.location.product;
     if (!productObj) {
       productObj = ProductData[this.props.match.params.id];
+      if (!productObj) return <div>Product Not Found!</div>;
     }
     return (
       <div className="productCard">

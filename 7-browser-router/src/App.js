@@ -1,9 +1,10 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import Header from "./Components/Header";
 import Products from "./Components/Products";
 import ProductDetail from "./Components/ProductDetail";
+import NotFound from "./Components/NotFound";
 import "./style.css";
 
 class App extends React.Component {
@@ -12,9 +13,12 @@ class App extends React.Component {
       <div>
         <Header />
         <div className="mainContainer">
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/Products" component={Products} />
-          <Route exact path="/Products/:id" component={ProductDetail} />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/Products" component={Products} />
+            <Route exact path="/Products/:id" component={ProductDetail} />
+            <Route component={NotFound} />
+          </Switch>
         </div>
       </div>
     );

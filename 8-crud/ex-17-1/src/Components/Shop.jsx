@@ -66,7 +66,7 @@ class Shop extends React.Component {
 
   addCat = async (event) => {
     try {
-      this.setState({ isSpinning: true });
+      this.setState({ isSpinning: true, addDisabled: true });
       event.preventDefault();
       const data = await API.post("/cats", this.state.catToAdd);
       if (data.statusText === "Created") {
@@ -75,6 +75,7 @@ class Shop extends React.Component {
             catsArr: [...prev.catsArr, data.data],
             catToAdd: { name: "", img: "", kind: "", price: "", phone: "" },
             isSpinning: false,
+            addDisabled: false,
           };
         });
       }
@@ -152,7 +153,9 @@ class Shop extends React.Component {
               holder="phone"
               value={this.state.catToAdd.phone}
             />
-            <button type="submit">Add</button>
+            <button type="submit" disabled={this.state.addDisabled}>
+              Add
+            </button>
           </form>
         </div>
         {this.state.isSpinning ? (

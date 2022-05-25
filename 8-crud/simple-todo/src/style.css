@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #111;
+}
+
+button:hover {
+  background: #d1d1d1;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 3rem auto;
+  gap: 4rem;
+  font-size: clamp(0.8rem, 2vw, 1.6rem);
+}
+
+.tasksContainer {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inputHeader {
+  align-self: center;
+}
+
+.inputHeader form {
+  display: flex;
+  gap: 2rem;
+}
+
+.inputHeader form input {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #111;
+}
+
+.taskCardHeader div {
+  font-weight: bold;
+  text-align: center;
+}
+
+.taskCard,
+.taskCardHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.taskId {
+  flex-basis: 50px;
+  flex-shrink: 0;
+}
+
+.priority {
+  flex-basis: 20px;
+}
+
+.task {
+  flex-basis: 20%;
+  flex-shrink: 0;
+}
+
+.date {
+  flex-basis: 30%;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.Btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@media (max-width: 650px) {
+  .inputHeader form {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 390px) {
+  button {
+    padding: 0.1rem 0.2rem;
+  }
+
+  .taskId {
+    flex-basis: 25px;
+  }
+
+  .date {
+    flex-basis: 22%;
+  }
+}

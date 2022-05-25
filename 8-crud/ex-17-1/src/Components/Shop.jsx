@@ -7,13 +7,13 @@ class Shop extends React.Component {
   state = {
     catsArr: [],
     catToAdd: { name: "", img: "", kind: "", price: "", phone: "" },
-    submitted: false,
+    isSpinning: true,
   };
 
   componentDidMount = async () => {
     try {
       const { data } = await API.get("/cats");
-      this.setState({ catsArr: data });
+      this.setState({ catsArr: data, isSpinning: false });
       console.log(data);
     } catch (err) {
       console.log(err);
@@ -32,6 +32,7 @@ class Shop extends React.Component {
           phone={cat.phone}
           price={cat.price}
           handleDelete={this.deleteCat}
+          getUpdated={this.getUpdated}
         />
       );
     });
@@ -39,6 +40,7 @@ class Shop extends React.Component {
 
   deleteCat = async (id) => {
     try {
+      this.setState({ isSpinning: true });
       const { statusText } = await API.delete(`/cats/${id}`);
       if (statusText === "OK") {
         this.setState((prev) => {
@@ -46,6 +48,7 @@ class Shop extends React.Component {
             catsArr: prev.catsArr.filter((cat) => {
               return cat.id !== id;
             }),
+            isSpinning: false,
           };
         });
       }
@@ -64,6 +67,7 @@ class Shop extends React.Component {
 
   addCat = async (event) => {
     try {
+      this.setState({ isSpinning: true });
       event.preventDefault();
       const data = await API.post("/cats", this.state.catToAdd);
       if (data.statusText === "Created") {
@@ -71,6 +75,36 @@ class Shop extends React.Component {
           return {
             catsArr: [...prev.catsArr, data.data],
             catToAdd: { name: "", img: "", kind: "", price: "", phone: "" },
+            isSpinning: false,
+          };
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  getUpdated = async (newKind, newPhone, newPrice, id) => {
+    try {
+      this.setState({ isSpinning: true });
+      const catToUpdate = this.state.catsArr.find((cat) => cat.id === id);
+      const updatedCat = {
+        ...catToUpdate,
+        kind: newKind,
+        phone: newPhone,
+        price: newPrice,
+      };
+      const { data, statusText } = await API.put(`/cats/${id}`, updatedCat);
+      if (statusText === "OK") {
+        this.setState((prev) => {
+          return {
+            catsArr: prev.catsArr.map((cat) => {
+              if (cat.id === id) {
+                return data;
+              }
+              return cat;
+            }),
+            isSpinning: false,
           };
         });
       }
@@ -122,7 +156,14 @@ class Shop extends React.Component {
             <button type="submit">Add</button>
           </form>
         </div>
-        <div className="catCards">{this.displayCats()}</div>
+        {this.state.isSpinning ? (
+          <div className="lds-ripple">
+            <div></div>
+            <div></div>
+          </div>
+        ) : (
+          <div className="catCards">{this.displayCats()}</div>
+        )}
       </>
     );
   }

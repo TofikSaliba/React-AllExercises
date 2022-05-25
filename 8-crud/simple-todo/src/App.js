@@ -51,9 +51,7 @@ class App extends React.Component {
         editing: false,
         editedID: "",
       });
-      setTimeout(() => {
-        localStorage.setItem("todoData", JSON.stringify(this.state.tasks));
-      }, 100);
+      localStorage.setItem("todoData", JSON.stringify(newTasks));
     }, 10);
   };
 
@@ -99,9 +97,7 @@ class App extends React.Component {
       return task.id !== id;
     });
     this.setState({ tasks: newTasks });
-    setTimeout(() => {
-      localStorage.setItem("todoData", JSON.stringify(this.state.tasks));
-    }, 100);
+    localStorage.setItem("todoData", JSON.stringify(newTasks));
   };
 
   render() {

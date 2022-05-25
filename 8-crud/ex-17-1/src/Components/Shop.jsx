@@ -14,7 +14,6 @@ class Shop extends React.Component {
     try {
       const { data } = await API.get("/cats");
       this.setState({ catsArr: data, isSpinning: false });
-      console.log(data);
     } catch (err) {
       console.log(err);
     }

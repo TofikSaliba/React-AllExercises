@@ -26,7 +26,6 @@ button:hover {
 
 .btnsContainer {
   display: flex;
-
   justify-content: space-between;
 }
 
@@ -69,6 +68,7 @@ button:hover {
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
   background: powderblue;
   border-radius: 10px;

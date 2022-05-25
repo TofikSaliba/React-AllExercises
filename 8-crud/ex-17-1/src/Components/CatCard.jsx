@@ -1,6 +1,6 @@
 import React from "react";
 
-const CatCard = ({ id, name, img, kind, phone, price }) => {
+const CatCard = ({ id, name, img, kind, phone, price, handleDelete }) => {
   return (
     <div className="card">
       <div className="name">{name}</div>
@@ -19,7 +19,7 @@ const CatCard = ({ id, name, img, kind, phone, price }) => {
       </div>
       <div className="btnsContainer">
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => handleDelete(id)}>Delete</button>
       </div>
     </div>
   );

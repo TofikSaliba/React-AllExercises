@@ -9,6 +9,10 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+  background: deepskyblue;
+}
+
 button {
   cursor: pointer;
   padding: 0.3rem 0.5rem;
@@ -20,24 +24,24 @@ button:hover {
   background: #d1d1d1;
 }
 
+.btnsContainer {
+  display: flex;
+
+  justify-content: space-between;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   margin: 3rem auto;
   gap: 4rem;
-  font-size: clamp(0.8rem, 2vw, 1.6rem);
-}
-
-.tasksContainer {
-  margin: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
 }
 
 .inputHeader {
   align-self: center;
+  margin: 2rem;
 }
 
 .inputHeader form {
@@ -49,66 +53,54 @@ button:hover {
   padding: 0.5rem 1rem;
   border-radius: 10px;
   border: 1px solid #111;
+  width: 18%;
 }
 
-.taskCardHeader div {
+.catCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: center;
+  width: 100vw;
+  max-width: 1200px;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: powderblue;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.card span {
+  font-weight: bold;
+}
+
+.name {
   font-weight: bold;
   text-align: center;
 }
 
-.taskCard,
-.taskCardHeader {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  gap: 1rem;
+img {
+  width: 180px;
 }
 
-.taskId {
-  flex-basis: 50px;
-  flex-shrink: 0;
-}
-
-.priority {
-  flex-basis: 20px;
-}
-
-.task {
-  flex-basis: 20%;
-  flex-shrink: 0;
-}
-
-.date {
-  flex-basis: 30%;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.Btns {
-  display: flex;
-  gap: 0.5rem;
-  flex-shrink: 0;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .inputHeader form {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .inputHeader form input {
+    width: 100%;
   }
 }
 
 @media (max-width: 390px) {
   button {
     padding: 0.1rem 0.2rem;
-  }
-
-  .taskId {
-    flex-basis: 25px;
-  }
-
-  .date {
-    flex-basis: 22%;
   }
 }

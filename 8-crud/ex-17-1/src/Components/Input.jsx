@@ -1,0 +1,27 @@
+import React from "react";
+
+class Input extends React.Component {
+  state = { value: "" };
+
+  handleChange = ({ target }) => {
+    this.setState({ value: target.value });
+    this.props.callBack(target.value);
+  };
+
+  render() {
+    return (
+      <>
+        <input
+          id={this.props.id}
+          onChange={this.handleChange}
+          type={this.props.type}
+          placeholder={this.props.holder}
+          value={this.props.value}
+          required
+        />
+      </>
+    );
+  }
+}
+
+export default Input;

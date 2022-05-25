@@ -6,12 +6,25 @@ import "./style.css";
 
 class App extends React.Component {
   state = {
-    tasks: TodoData.sort((a, b) => b.priority - a.priority),
+    tasks: [],
     id: "",
     task: "",
     priority: "",
     editing: false,
     editedID: "",
+  };
+
+  componentDidMount = () => {
+    const local = localStorage.getItem("todoData");
+    if (local) {
+      this.setState({
+        tasks: JSON.parse(local).sort((a, b) => b.priority - a.priority),
+      });
+    } else {
+      this.setState({
+        tasks: TodoData.sort((a, b) => b.priority - a.priority),
+      });
+    }
   };
 
   //* ----- Create -----
@@ -38,6 +51,9 @@ class App extends React.Component {
         editing: false,
         editedID: "",
       });
+      setTimeout(() => {
+        localStorage.setItem("todoData", JSON.stringify(this.state.tasks));
+      }, 100);
     }, 10);
   };
 
@@ -83,6 +99,9 @@ class App extends React.Component {
       return task.id !== id;
     });
     this.setState({ tasks: newTasks });
+    setTimeout(() => {
+      localStorage.setItem("todoData", JSON.stringify(this.state.tasks));
+    }, 100);
   };
 
   render() {

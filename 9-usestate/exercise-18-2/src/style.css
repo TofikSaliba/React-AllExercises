@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  font-size: 2rem;
+  padding: 3rem;
+  user-select: none;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+  color: green;
+}

@@ -22,7 +22,7 @@ function App() {
     return fieldsArr.map((field) => {
       return (
         <div>
-          <label for={field[0]}>{field[0]}</label>
+          <label htmlFor={field[0]}>{field[0]}</label>
           <input
             id={field[0]}
             onChange={({ target }) => getInput(target.value * field[1])}

@@ -4,13 +4,13 @@ import "./style.css";
 
 function App() {
   //! for solution 1
-  const [solutionTwoSrc, setSolutionTwoSrc] = useState("clr");
+  const [solutionTwoSrc, setSolutionTwoSrc] = useState("bw");
 
   //! for solution 2
   const imgRef = useRef();
 
   useEffect(() => {
-    imgRef.current.src = require("./assets/images/img-1-clr.jpg");
+    imgRef.current.src = require("./assets/images/img-1-bw.jpg");
   }, []);
 
   const toggleImg = (val) => {
@@ -23,16 +23,16 @@ function App() {
       <img
         src={require(`./assets/images/img-2-${solutionTwoSrc}.jpg`)}
         alt={"2"}
-        onMouseEnter={() => setSolutionTwoSrc("bw")}
-        onMouseLeave={() => setSolutionTwoSrc("clr")}
+        onMouseEnter={() => setSolutionTwoSrc("clr")}
+        onMouseLeave={() => setSolutionTwoSrc("bw")}
       />
 
       {/* solution 2: using useRef and useEffect */}
       <img
         ref={imgRef}
         alt={"1"}
-        onMouseEnter={() => toggleImg("bw")}
-        onMouseLeave={() => toggleImg("clr")}
+        onMouseEnter={() => toggleImg("clr")}
+        onMouseLeave={() => toggleImg("bw")}
       />
     </div>
   );

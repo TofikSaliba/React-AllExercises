@@ -23,16 +23,16 @@ function App() {
       <img
         src={require(`./assets/images/img-2-${solutionTwoSrc}.jpg`)}
         alt={"2"}
-        onMouseOver={() => setSolutionTwoSrc("bw")}
-        onMouseOut={() => setSolutionTwoSrc("clr")}
+        onMouseEnter={() => setSolutionTwoSrc("bw")}
+        onMouseLeave={() => setSolutionTwoSrc("clr")}
       />
 
       {/* solution 2: using useRef and useEffect */}
       <img
         ref={imgRef}
         alt={"1"}
-        onMouseOver={() => toggleImg("bw")}
-        onMouseOut={() => toggleImg("clr")}
+        onMouseEnter={() => toggleImg("bw")}
+        onMouseLeave={() => toggleImg("clr")}
       />
     </div>
   );

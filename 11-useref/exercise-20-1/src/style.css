@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+button {
+  margin: 3rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
